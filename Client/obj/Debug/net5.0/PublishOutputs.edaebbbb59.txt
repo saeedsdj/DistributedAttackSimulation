@@ -1,0 +1,5 @@
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\publish\Client.exe
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\publish\Client.dll
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\publish\Client.deps.json
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\publish\Client.runtimeconfig.json
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\publish\Client.pdb

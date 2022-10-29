@@ -4,7 +4,7 @@ using System.Net.Sockets;
 
 namespace Server
 {
-    class Listener
+    class Server
     {
         Socket socket;
 
@@ -12,7 +12,7 @@ namespace Server
 
         public int Port { get; set; }
 
-        public Listener(int _port)
+        public Server(int _port)
         {
             Port = _port;
             socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);

@@ -2,28 +2,41 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace Server
 {
     class Program
     {
-        static Listener listener;
+        private static Thread threadConsole;
+
+        static Server server;
         static List<Socket> sockets;
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello Server!");
-            listener = new Listener(8888);
-            listener.SocketAccepted += new Listener.SocketAcceptedHandler(listener_SocketAccepted);
-            sockets = new List<Socket>();
-            listener.Start();
+            Console.Title = "Distributed Computing Server";
 
-            Console.Read();
+            server = new Server(8888);
+            server.SocketAccepted += new Server.SocketAcceptedHandler(server_SocketAccepted);
+            sockets = new List<Socket>();
+            server.Start();
+
+            threadConsole = new Thread(new ThreadStart(ConsoleThread));
+            threadConsole.Start();
         }
 
-        static void listener_SocketAccepted(Socket e)
+        static void server_SocketAccepted(Socket e)
         {
             Console.WriteLine("New Connection: {0}\n=============", e.RemoteEndPoint);
             sockets.Add(e);
+        }
+
+        private static void ConsoleThread()
+        {
+            while (true)
+            {
+                Thread.Sleep(100);
+            }
         }
     }
 }

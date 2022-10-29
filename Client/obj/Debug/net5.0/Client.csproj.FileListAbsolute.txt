@@ -1,0 +1,16 @@
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\Client.exe
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\Client.deps.json
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\Client.runtimeconfig.json
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\Client.runtimeconfig.dev.json
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\Client.dll
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\ref\Client.dll
+C:\D\Web Projects\DistributedAttackSimulation\Client\bin\Debug\net5.0\Client.pdb
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.csproj.AssemblyReference.cache
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.AssemblyInfoInputs.cache
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.AssemblyInfo.cs
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.csproj.CoreCompileInputs.cache
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.dll
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\ref\Client.dll
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.pdb
+C:\D\Web Projects\DistributedAttackSimulation\Client\obj\Debug\net5.0\Client.genruntimeconfig.cache

@@ -31,6 +31,11 @@ namespace Server
 
                 int rec = socket.Receive(buffer, buffer.Length, 0);
 
+                if (rec <= 0)
+                {
+                    throw new Exception($"Error receiving 0 byte data from {EndPoint} with player Id: {ID}");
+                }
+
                 if (rec < buffer.Length)
                 {
                     Array.Resize<byte>(ref buffer, rec);

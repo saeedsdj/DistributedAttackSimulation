@@ -16,8 +16,12 @@ namespace Client
             Socket s = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             s.Connect("127.0.0.1", 8888);
 
-            threadConsole = new Thread(new ThreadStart(ConsoleThread));
-            threadConsole.Start();
+            Thread.Sleep(5000);
+            s.Close();
+            s.Dispose();
+
+            // threadConsole = new Thread(new ThreadStart(ConsoleThread));
+            // threadConsole.Start();
         }
 
         private static void ConsoleThread()

@@ -28,6 +28,8 @@ namespace Server
             socket.Bind(new IPEndPoint(0, Port));
             socket.Listen(0);
 
+            Console.WriteLine("Server is ready to accept Attackers on port: {0}", Port);
+
             socket.BeginAccept(callback, null);
             Listening = true;
         }

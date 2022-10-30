@@ -10,7 +10,7 @@ namespace Server
     class Program
     {
         private static Thread threadConsole;
-
+        private static bool attacking = false;
         static Server server;
         static List<Client> clients;
         static void Main(string[] args)
@@ -31,6 +31,8 @@ namespace Server
             Client client = new Client(e);
             client.Received += new Client.ClientReceivedHandler(client_Received);
             client.Disconnected += new Client.ClientDisconnectedHandler(client_Disconnected);
+
+            attacking = false;
 
             lock (clients)
             {
@@ -83,7 +85,47 @@ namespace Server
         {
             while (true)
             {
-                Thread.Sleep(100);
+                if (!attacking)
+                {
+                    bool attackCommand = true;
+                    lock (clients)
+                    {
+                        if (clients.Count > 1)
+                        {
+                            Console.WriteLine("_________________________________________");
+                            Console.WriteLine("Attacker\t\t| State");
+                            Console.WriteLine("-----------------------------------------");
+                            for (int i = 0; i < clients.Count; i++)
+                            {
+                                Console.WriteLine("{0}\t\t| {1}", clients[i].EndPoint, (clients[i].ReadyToAttack ? "Ready" : "Not Ready"));
+                                if (!clients[i].ReadyToAttack)
+                                {
+                                    attackCommand = false;
+                                }
+                            }
+                            Console.WriteLine("");
+                            Console.WriteLine("");
+                        }
+                        else
+                        {
+                            attackCommand = false;
+                        }
+                    }
+
+                    if (attackCommand)
+                    {
+                        attacking = true;
+                        Console.WriteLine("All Attackers Ready! Command them all to start attacking...");
+                        lock (clients)
+                        {
+                            for (int i = 0; i < clients.Count; i++)
+                            {
+                                clients[i].AttackCommand("Attack...! For Women, Life, Freedom");
+                            }
+                        }
+                    }
+                }
+                Thread.Sleep(5000);
             }
         }
     }

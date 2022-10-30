@@ -1,6 +1,7 @@
 using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace Server
 {
@@ -58,6 +59,11 @@ namespace Server
                     Disconnected(this);
                 }
             }
+        }
+
+        public void AttackCommand(string msg)
+        {
+            int s = socket.Send(Encoding.Default.GetBytes(msg));
         }
 
         public void Close()
